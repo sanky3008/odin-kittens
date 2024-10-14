@@ -1,0 +1,21 @@
+<% if flash.any? %>
+  <% flash.each do |type, message| %>
+    <p><%= message %></p>
+  <% end %>
+<% end %>
+
+<% content_for :title, "Kittens" %>
+
+<h1>Kittens</h1>
+
+<div id="kittens">
+  <% @kittens.each do |kitten| %>
+    <%= render kitten %>
+    <p>
+      <%= link_to "Show this kitten", kitten %>
+      <%= button_to "Destroy this kitten", kitten, method: :delete %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New kitten", new_kitten_path %>

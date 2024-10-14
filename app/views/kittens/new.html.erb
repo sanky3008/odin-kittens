@@ -1,0 +1,17 @@
+<% content_for :title, "New kitten" %>
+
+<% if flash.any? %>
+  <% flash.each do |type, message| %>
+    <p><%= message %></p>
+  <% end %>
+<% end %>
+
+<h1>New kitten</h1>
+
+<%= render "form", kitten: @kitten %>
+
+<br>
+
+<div>
+  <%= link_to "Back to kittens", kittens_path %>
+</div>
